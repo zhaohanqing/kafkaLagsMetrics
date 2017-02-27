@@ -17,6 +17,13 @@ Requirenments:
 
 Configuration:
 ------------------
+application.properties example
+```
+kafka.cluster.configuration.file.path=KafkaCluster.xml
+metrics.thread.pool.size=3
+metrics.collect.internal.minute=2
+```
+
 kafkaCluster.xml example
 ```
 ?xml version="1.0" encoding="UTF-8"?>
@@ -44,7 +51,7 @@ kafkaCluster.xml example
 Building
 ------------------
 ```
-cd ./{projectpath}
+cd /{projectpath}
 mvn clean
 mvn compile
 mvn package -Dmaven.test.skip=ture
@@ -53,7 +60,7 @@ mvn package -Dmaven.test.skip=ture
 Running
 -----------------
 ```
-cd ./{projectpath}/target
+cd /{projectpath}/target
 java -jar kafkaLagsMetrics-0.0.1-SNAPSHOT.jar
 ```
 - health check: http://127.0.0.1:8080/healthcheck
